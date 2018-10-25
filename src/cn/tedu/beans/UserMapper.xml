@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.UserMapper">
+
+<!--根据用户名查询用户是否存在的方法  -->
+ <select id="getUserByUsername" resultType="cn.tedu.beans.User">
+	select * from user where username=#{username};
+ </select>
+ 
+ <!--根据用户名和密码进行登录操作方法  -->
+<select id="getUserByUAP" resultType="cn.tedu.beans.User">
+ select * from user where 
+ <where>
+  <if test="id != 0">id=#{id}</if>
+   <if test="username != null">and username=#{username}</if>
+   <if test="password != null">and password=#{password}</if>
+ </where>
+</select>
+
+<!-- 保存用户信息 -->
+<insert id="saveUser">
+ insert into user values(null,#{username},#{password},#{nickname},#{email});
+</insert>
+					
+					
+</mapper>
