@@ -35,11 +35,10 @@
        <!--配置事务通知  -->
        <tx:advice id="txAdvice" transaction-manager="transactionManager">
     		<tx:attributes>
-    			<tx:method name="add*" propagation="REQUIRED"/>
+    			<tx:method name="add*" propagation="REQUIRED" read-only="false"/>
     			<tx:method name="delete*" propagation="REQUIRED"/>
     			<tx:method name="update*" propagation="REQUIRED"/>
     			<tx:method name="find*" propagation="SUPPORTS"/>
-    			<tx:method name="*" read-only="true"/>
     		</tx:attributes>
        </tx:advice>
        <!--配置事务切面  -->

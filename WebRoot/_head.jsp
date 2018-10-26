@@ -8,7 +8,7 @@
 		<div id="content">
 	    <c:if test="${ empty sessionScope.user }" var="flag" scope="page">
 		  <!--用户没有登录  -->
-		     <a href="/toFile.action?vname=login">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/regist.jsp">注册</a>
+		     <a href="/toFile.action?vname=login">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/toFile.action?vname=regist">注册</a>
 		</c:if>
 		<c:if test="${!flag}">
 		  欢迎  &nbsp;${sessionScope.user.username} &nbsp;回来 |&nbsp;&nbsp;<a href="/toFile.action?vname=logout">注销</a>

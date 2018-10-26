@@ -35,7 +35,7 @@
 	  
 	
 		<h1>欢迎登录EasyMall</h1>
-		<form action="/LoginServlet" method="POST">
+		<form action="${app}/login.action" method="POST">
 			<table>
 			    <tr>
 			       <td style="text-align: center;color:red">${requestScope.errMsg}</td>
