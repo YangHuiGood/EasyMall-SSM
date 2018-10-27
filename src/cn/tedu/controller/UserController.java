@@ -191,4 +191,20 @@ public class UserController {
 			return "login";
 		}
 	}
+	
+	@RequestMapping("/logout.action")
+	public String logout(HttpServletRequest req,HttpServletResponse resp){
+		// 执行注销
+		// 销毁用户绑定的session
+		req.getSession().invalidate();
+		// 删除30自动登录的cookie
+		Cookie cookie = new Cookie("autologin", "");
+		cookie.setMaxAge(0);
+		cookie.setPath(req.getContextPath() + "/");
+		resp.addCookie(cookie);
+
+		// 请求重定向到首页
+		return "redirect:/index.jsp";
+		
+	}
 }

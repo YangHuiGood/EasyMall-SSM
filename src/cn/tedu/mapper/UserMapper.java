@@ -1,5 +1,7 @@
 package cn.tedu.mapper;
 
+import org.apache.ibatis.annotations.Param;
+
 import cn.tedu.beans.User;
 import cn.tedu.exception.MsgException;
 
@@ -26,5 +28,5 @@ public interface UserMapper {
 	 * @return  成功--返回 User对象  失败--返回null 
 	 * @throws 封装了提示信息的自定义异常对象
 	 */
-	User findUserByUAP(String username, String password) throws MsgException;
+	User findUserByUAP(@Param("username")String username, @Param("password")String password) throws MsgException;
 }
