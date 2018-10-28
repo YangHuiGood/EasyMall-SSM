@@ -27,20 +27,6 @@ import cn.tedu.util.WebUtils;
 public class UserController {
 	@Autowired
 	private UserService userService;
-	
-	/**
-	 * 转发跳转相应页面
-	 * @param req
-	 * @return
-	 * @throws IOException
-	 * @throws Exception
-	 */
-	@RequestMapping("/toFile.action")
-	public String toFile(HttpServletRequest req) throws IOException, Exception{
-		String vname = req.getParameter("vname");
-		return vname;
-	}
-	
 	/**
 	 * 注册用户
 	 * @param user

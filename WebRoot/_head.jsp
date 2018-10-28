@@ -33,7 +33,7 @@
 		<div id="content">
 			<ul>
 				<li><a href="${app}">首页</a></li>
-				<li><a href="${app}/ProdListServlet">全部商品</a></li>
+				<li><a href="/prodList.action">全部商品</a></li>
 				<li><a href="#">手机数码</a></li>
 				<li><a href="#">电脑平板</a></li>
 				<li><a href="#">家用电器</a></li>
