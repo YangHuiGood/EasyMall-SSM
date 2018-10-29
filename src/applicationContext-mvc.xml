@@ -11,7 +11,7 @@
        http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
        
         <!--开启包扫描  -->
-      <context:component-scan base-package="cn.tedu.controller"/>
+      <context:component-scan base-package="cn.tedu.controller,cn.tedu.backend.controller"/>
       <!--开启MVC注解  -->
       <mvc:annotation-driven/>
       <!--配置视图解析器  -->
@@ -19,4 +19,8 @@
       		<property name="prefix" value="/WEB-INF/"></property>
       		<property name="suffix" value=".jsp"></property>
       </bean>
+      <!-- 配置上传文件处理器bean -->
+	    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+          <!--  <property name="maxUploadSize" value="1024"></property> -->
+	    </bean>
 </beans>

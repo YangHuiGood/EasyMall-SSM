@@ -5,15 +5,22 @@
 <mapper namespace="cn.tedu.mapper.ProdMapper">
 
 <resultMap type="cn.tedu.beans.Prod" id="prodRM">
- <id column="id" property="id"/>
- <collection property="prodCategory" ofType="cn.tedu.mybatis.beans.ProdCategory">
+ <id column="pid" property="id"/>
+ <result column="pname" property="name"/>
+ <result column="pprice" property="price"/>
+ <result column="ppnum" property="pnum"/>
+ <result column="pimgurl" property="imgurl"/>
+ <result column="pdescription" property="description"/>
+ <collection property="prodCategory" ofType="cn.tedu.beans.ProdCategory">
   <id column="id" property="id"/>
   <result column="cname" property="cname"/>
  </collection>
 </resultMap>
 <!--查询所有商品的方法-->
- <select id="findProds" resultType="prodRM">
-	Select prod.*,prod_category.cname from 
+ <select id="findProds" resultMap="prodRM">
+	Select prod.id as pid,prod.name as pname,prod.price as pprice,prod.pnum as ppnum,prod.imgurl as pimgurl,
+	prod.description as pdescription,prod_category.cname 
+	from 
 	prod inner join prod_category on prod.cid = prod_category.id;
  </select>
  

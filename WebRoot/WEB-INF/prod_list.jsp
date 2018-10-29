@@ -19,7 +19,7 @@
 		<div id="prod_content">
 		<c:forEach items="${requestScope.list}" var="prod">
 		   <div class="prod_div">
-				<img src="${app}/ProdImgServlet?imgurl=${prod.imgurl}"></img>
+				<img src="${app}/prodImage.action?imgurl=${prod.imgurl}"></img>
 				<div id="prod_name_div">
 					${prod.name}
 				</div>

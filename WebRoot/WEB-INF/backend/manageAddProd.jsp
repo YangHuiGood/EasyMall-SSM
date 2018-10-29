@@ -11,7 +11,7 @@
 	<body>
 		<h1>EasyMall_添加商品</h1>
 		<hr>
-			<form action="${app }/ManageAddProdServlet" method="POST" enctype="multipart/form-data">
+			<form action="${app }/addProd.action" method="POST" enctype="multipart/form-data">
 				<table align="center" border="1" cellspacing="0px" cellpadding="5px">
 				    <tr>
 						<td colspan="2" style="text-align:center;color:red">
@@ -28,7 +28,7 @@
 					</tr>
 					<tr>
 						<td>商品种类</td>
-						<td><input type="text" name="cname"/></td>
+						<td><input type="text" name="prodCategory.cname"/></td>
 					</tr>
 					<tr>
 						<td>库存数量</td>

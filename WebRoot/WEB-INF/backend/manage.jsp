@@ -9,10 +9,10 @@
 	</head>
 	<!-- frameset组织页面结构 -->
 	<frameset rows="13%, 87%" frameborder="0" framespacing="0">
-		<frame src="${app}/backend/_top.jsp" noresize="noresize"/>
+		<frame src="${app}/toTop.action" noresize="noresize"/>
 		<frameset cols="14%, 86%" frameborder="0" framespacing="0">
-			<frame src="${app}/backend/_left.jsp" noresize="noresize"/>
-			<frame src="${app}/backend/_right.jsp" name="rightFrame"  noresize="noresize"/>
+			<frame src="${app}/toLeft.action" noresize="noresize"/>
+			<frame src="${app}/toRight.action" name="rightFrame"  noresize="noresize"/>
 		</frameset>
 	</frameset>
 	<body>
