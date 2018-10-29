@@ -24,7 +24,30 @@
 	prod inner join prod_category on prod.cid = prod_category.id;
  </select>
  
-					
+ <!-- 添加一个商品的方法 -->
+ <insert id="addProdOne">
+ insert into prod
+ <trim prefix="(" suffix=")" suffixOverrides=",">
+  id,
+  <if test="name != null">name,</if>
+  <if test="price != 0">price,</if>
+  <if test="cid != 0">cid,</if>
+  <if test="pnum != 0">pnum,</if>
+  <if test="imgurl != null">imgurl,</if>
+  <if test="description != null">description,</if>
+  
+ </trim>
+ values
+ <trim prefix="(" suffix=")" suffixOverrides=",">
+  id,
+  <if test="name != null">#{name},</if>
+  <if test="price != 0">#{price},</if>
+  <if test="cid != 0">#{cid},</if>
+  <if test="pnum != 0">#{pnum},</if>
+  <if test="imgurl != null">#{imgurl},</if>
+  <if test="description != null">#{description},</if>
+ </trim>
+</insert>				
 					
 </mapper>
 

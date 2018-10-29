@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.ProdCategoryMapper">
+<!--添加商品种类的方法-->
+ <insert id="addPC" parameterType="cn.tedu.beans.ProdCategory">
+	insert into prod_category values(null,#{cname});
+ </insert>
+ 
+ <resultMap type="cn.tedu.beans.ProdCategory" id="pcRM">
+  <id column="cid" property="id"/>
+ </resultMap>
+ <select id="findCidByCname" resultMap="pcRM">
+  select prod_category.id as cid from prod_category where cname = ${cname};
+ </select>
+					
+					
+</mapper>
+

@@ -15,5 +15,10 @@ public class ProdListImpl implements ProdService {
 	public List<Prod> getProds() {
 		return prodMapper.findProds();
 	}
+	@Override
+	public boolean addProd(Prod prod) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }
