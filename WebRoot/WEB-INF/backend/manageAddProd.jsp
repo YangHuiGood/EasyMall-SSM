@@ -28,7 +28,7 @@
 					</tr>
 					<tr>
 						<td>商品种类</td>
-						<td><input type="text" name="prodCategory.cname"/></td>
+						<td><input type="text" name="cname"/></td>
 					</tr>
 					<tr>
 						<td>库存数量</td>

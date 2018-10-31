@@ -5,6 +5,7 @@ public class Prod {
 	private String name;
 	private double price;
 	private int cid;
+	private String cname;
 	private int pnum;
 	private String imgurl;
 	private String description;
@@ -13,13 +14,15 @@ public class Prod {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Prod(int id, String name, double price, int cid, int pnum,
-			String imgurl, String description,ProdCategory prodCategory) {
+	public Prod(int id, String name, double price, int cid, String cname,
+			int pnum, String imgurl, String description,
+			ProdCategory prodCategory) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.cid = cid;
+		this.cname = cname;
 		this.pnum = pnum;
 		this.imgurl = imgurl;
 		this.description = description;
@@ -49,6 +52,12 @@ public class Prod {
 	public void setCid(int cid) {
 		this.cid = cid;
 	}
+	public String getCname() {
+		return cname;
+	}
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
 	public int getPnum() {
 		return pnum;
 	}
@@ -67,7 +76,6 @@ public class Prod {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
 	public ProdCategory getProdCategory() {
 		return prodCategory;
 	}
@@ -77,7 +85,9 @@ public class Prod {
 	@Override
 	public String toString() {
 		return "Prod [id=" + id + ", name=" + name + ", price=" + price
-				+ ", cid=" + cid + ", pnum=" + pnum + ", imgurl=" + imgurl
-				+ ", description=" + description + ", prodCategory=" + prodCategory + "]";
+				+ ", cid=" + cid + ", cname=" + cname + ", pnum=" + pnum
+				+ ", imgurl=" + imgurl + ", description=" + description
+				+ ", prodCategory=" + prodCategory + "]";
 	}
+	
 }

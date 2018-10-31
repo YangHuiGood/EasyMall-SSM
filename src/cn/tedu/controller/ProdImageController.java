@@ -34,6 +34,7 @@ public class ProdImageController {
 				sos.write(array, 0, len);
 				len = fis.read(array);
 			}
+			sos.flush();
 		} catch (Exception e) {
 			// TODO: handle exception
 		} finally {

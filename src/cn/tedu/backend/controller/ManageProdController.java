@@ -56,9 +56,9 @@ public class ManageProdController {
 		// 生成目录
 		// d:/web/workspace/easymall/webroot/....
 		uploadPath = sc.getRealPath(uploadPath+midPath);
-		
+		new File(uploadPath).mkdirs();
 		try {
-			FileUtils.writeByteArrayToFile(new File(uploadPath+"/"+fx.getOriginalFilename())
+			FileUtils.writeByteArrayToFile(new File(uploadPath+"/"+fileName)
 			, fx.getBytes());
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -70,7 +70,7 @@ public class ManageProdController {
 			//5.保存成功-提示成功信息，定时刷新到首页
 			resp.setHeader("Content-type", "text/html;charset=UTF-8");
 			resp.getWriter().write("<h1 style='text-align:center;color:red'>商品添加成功,3秒后自动跳转首页</h1>");
-			resp.setHeader("refresh", "3;url="+req.getContextPath()+"/backend/_right.jsp");
+			resp.setHeader("refresh", "3;url="+req.getContextPath()+"/toRight.action");
 			return null;
 		}else{
 			//向request作用域中添加错误提示信息

@@ -15,5 +15,5 @@ public interface ProdCategoryMapper {
 	 * @param cname 商品种类名称
 	 * @return 返回商品种类id
 	 */
-	public int findCidByCname(String cname);
+	public ProdCategory findCidByCname(String cname);
 }
